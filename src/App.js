@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import './App.css';
+import { Game } from './GameScreen/GameScreen';
+import {MainScreen} from './MainScreen/MainScreen'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [gameMode, setGameMode] = React.useState('')
+  const [gameStarted, setGameStarted] = React.useState(false)
 
+  const handleGameMode = (mode) => {
+    setGameMode(mode)
+    setGameStarted(true)
+  }
+
+  return(
+
+      <TransitionGroup>
+        <CSSTransition
+          key={gameStarted ? 'game' : 'mainScreen'}
+          timeout={300}
+          classNames='fade'
+        >
+
+          {gameStarted ? (
+            <Game gameMode={gameMode} />
+          ) : (
+            <MainScreen handleGameMode={handleGameMode}></MainScreen>
+          )}
+
+        </CSSTransition>
+      </TransitionGroup>
+
+  )
+}
 export default App;

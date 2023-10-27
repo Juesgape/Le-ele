@@ -1,0 +1,57 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.choose-title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    margin: 0 1rem;
+}
+
+.color-x {
+    color: crimson;
+}
+.color-o {
+    color: cornflowerblue;
+}
+
+.btn-x,
+.btn-o {
+    padding: 1.5rem 2rem;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-x:hover,
+.btn-o:hover {
+    background-color: #d3d3d3;
+    color: #1a1c20;
+}

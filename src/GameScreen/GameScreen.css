@@ -1,0 +1,32 @@
+.board {
+    width: 31rem;
+    height: 31rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main-title {
+    width: 100%;
+    text-align: center;
+    color: hsl(0, 5%, 93%);
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid black;
+    text-align: center;
+    background-color: hsl(0, 5%, 93%);
+}
+.square:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.symbol {
+    font-size: 3rem;
+}
